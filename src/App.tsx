@@ -2,14 +2,13 @@ import React from 'react';
 import './App.css';
 
 import Home from './screens/Home';
+import AppProvider from './hooks';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Home />
-      </header>
-    </div>
+    <AppProvider>
+      <Home />
+    </AppProvider>
   );
 }
 
