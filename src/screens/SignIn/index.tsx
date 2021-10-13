@@ -5,7 +5,7 @@ import { useUser } from '../../hooks/user';
 
 import * as SC from './styles';
 
-const SingIn = () => {
+const SingIn: React.FC = () => {
 
     const [redirect, setRedirect] = useState(false);
 

@@ -4,7 +4,7 @@ import { HashRouter, Switch, Route } from 'react-router-dom';
 import SingIn from '../screens/SignIn';
 import Home from '../screens/Home';
 
-const Router = () => {
+const Router: React.FC = () => {
     return (
         <HashRouter>
             <Switch>

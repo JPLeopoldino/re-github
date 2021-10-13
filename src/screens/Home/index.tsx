@@ -6,7 +6,7 @@ import * as SC from './styles';
 import { useUser } from '../../hooks/user';
 import { Redirect } from 'react-router-dom';
 
-const Home = () => {
+const Home: React.FC = () => {
 
     const { getAllUserInfo, userData, reposData, userLogon, loading } = useUser();
     const [redirect, setRedirect] = useState(false);

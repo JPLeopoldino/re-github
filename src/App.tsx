@@ -4,7 +4,7 @@ import './App.css';
 import AppProvider from './hooks';
 import Router from './routes';
 
-function App() {
+const App: React.FC = () => {
   return (
     <AppProvider>
       <Router />
