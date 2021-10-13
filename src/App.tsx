@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 
-import Home from './screens/Home';
 import AppProvider from './hooks';
+import Router from './routes';
 
 function App() {
   return (
     <AppProvider>
-      <Home />
+      <Router />
     </AppProvider>
   );
 }
