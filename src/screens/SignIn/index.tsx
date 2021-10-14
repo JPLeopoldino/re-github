@@ -3,7 +3,10 @@ import { Redirect } from 'react-router-dom';
 // import { useSearch } from '../../hooks/search';
 import { useUser } from '../../hooks/user';
 
+import { FormCard } from '../../components/Cards';
+
 import * as SC from './styles';
+
 
 const SingIn: React.FC = () => {
 
@@ -23,11 +26,16 @@ const SingIn: React.FC = () => {
                 ? <Redirect to="/home" />
                 : <SC.Container>
                     <SC.Title>Re-GitHub</SC.Title>
-                    <SC.UserInfoContainer onSubmit={handleSingIn}>
+                    <FormCard
+                        onSubmit={handleSingIn}
+                        width={20}
+                        height={28}
+                    >
                         <SC.Title>SingIn</SC.Title>
                         <SC.Input type="text" onChange={event => handleUserLogonChange(event.target.value)} />
                         <SC.Button type="submit">Login</SC.Button>
-                    </SC.UserInfoContainer>
+                    </FormCard>
+                    <SC.Icon/>
                 </SC.Container>
             }
         </>

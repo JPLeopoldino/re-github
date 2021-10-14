@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BsGithub } from "react-icons/bs";
 
 export const Container = styled.div`
     width: 100vw;
@@ -71,7 +72,7 @@ export const Button = styled.button`
 
 export const Input = styled.input`
     padding: 10px 30px;
-    background-color: rgba(27, 23, 50, 0.5);
+    background-color: rgba(27, 23, 50, 0.3);
     outline: 1px solid #90a0d1;
     z-index: 99;
     border-radius: 24px;
@@ -87,6 +88,14 @@ export const Input = styled.input`
         box-shadow: inset 0 0 3em rgba(144, 160, 209, 0.2);
         background-color: rgba(27, 23, 50, 0.1);
     }
+`;
+
+export const Icon = styled(BsGithub)`
+    color: #17102D;
+    position: absolute;
+    font-size: 130rem;
+    z-index: 10;
+    top: -40%;
 `;
 
 export const Title = styled.h1`
@@ -111,7 +120,7 @@ export const UserInfoContainer = styled.form`
     justify-content: space-evenly;
     border-radius: 18px;
     border: 1px solid #90a0d1;
-    z-index: 99;
+    z-index: 999;
     backdrop-filter: blur(24px);
     position: relative;
 
