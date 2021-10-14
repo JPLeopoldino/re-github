@@ -13,6 +13,7 @@ interface UserContextData {
     userData: UserData;
     loading: boolean;
     userLogon: string;
+    reposLanguagesData: Object;
 }
 
 interface UserData {
@@ -50,7 +51,7 @@ interface UserData {
     updated_at: string
 }
 
-interface ReposData {
+export interface ReposData {
     id: number,
     node_id: string,
     name: string,
@@ -130,7 +131,7 @@ interface ReposData {
     default_branch: string,
 }
 
-interface RepoOwnerData {
+export interface RepoOwnerData {
     login: string,
     id: number,
     node_id: string,
@@ -296,7 +297,8 @@ const UserProvider: React.FC = ({ children }) => {
     );
     const [reposData, setReposData] = useState<ReposData[]>([
         reposDataInitialState as ReposData,
-    ]);    
+    ]);
+    const [reposLanguagesData, setReposLanguagesData] = useState({});
 
     const getUserInfo = useCallback(async () => {
         try {
@@ -318,11 +320,22 @@ const UserProvider: React.FC = ({ children }) => {
         }
     }, [setReposData, userLogon])
 
+    const getReposLanguages = useCallback(async (name) => {
+        try {
+            const response = await api.get(`repos/${userLogon}/${name}/languages`)
+            if(response.data)
+            setReposLanguagesData(response.data)
+        } catch (error) {
+            console.log(error)
+        }
+    }, [setReposLanguagesData, userLogon])
+
     const getAllUserInfo = useCallback(async () => {
         try {
             setLoading(true)
             await getUserInfo()
             await getReposInfo()
+            // await getReposLanguages(reposData.map(i => i.name))
             setLoading(false)
         } catch (error) {
             console.log(error)
@@ -341,7 +354,8 @@ const UserProvider: React.FC = ({ children }) => {
                 loading,
                 userLogon,
                 getAllUserInfo,
-                handleUserLogonChange
+                handleUserLogonChange,
+                reposLanguagesData
             }}
         >
             {children}
