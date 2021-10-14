@@ -3,13 +3,17 @@ import Lottie from 'react-lottie';
 import animationData from '../../assets/loading.json';
 
 import * as SC from './styles';
+import { Card, ReposCard } from '../../components/Cards';
+
 import { useUser } from '../../hooks/user';
 import { Redirect } from 'react-router-dom';
 
 const Home: React.FC = () => {
 
-    const { getAllUserInfo, userData, reposData, userLogon, loading } = useUser();
+    const { getAllUserInfo, userData, reposData, userLogon, loading, reposLanguagesData } = useUser();
     const [redirect, setRedirect] = useState(false);
+
+    const RepositoriesData = { reposData, reposLanguagesData }
 
     const defaultOptions = {
         loop: true,
@@ -43,8 +47,11 @@ const Home: React.FC = () => {
                 width={200}
             />
             : <>
-            <SC.UserInfoContainer>
-                <SC.Title>Home</SC.Title>
+            {/* <SC.Title>Home</SC.Title> */}
+            <Card
+                width={30}
+                height={50}
+            >
                 <SC.ArrowLeft onClick={() => setRedirect(!redirect)} />
                 <a href="https://github.com/settings/profile" target="_blank" rel="noreferrer">
                     <SC.UserAvatar src={userData.avatar_url}/>
@@ -55,21 +62,13 @@ const Home: React.FC = () => {
                 <SC.UserName>{userData.company}</SC.UserName>
                 <SC.UserName>{userData.email}</SC.UserName>
                 <SC.UserName>{`Member since: ${userData.created_at.substr(0, 4)}`}</SC.UserName>
-            </SC.UserInfoContainer>
-            <SC.UserInfoContainer>
-                <SC.Title>Repos</SC.Title>
-                {
-                    reposData.map((item, index) => {
-                        return(
-                            <SC.RepoRow key={index} href={item.html_url} target="_blank">
-                                <SC.UserName>{item.name}</SC.UserName>
-                                <SC.UserName>{item.language}</SC.UserName>
-                                {/* <SC.UserName>{item.visibility}</SC.UserName> */}
-                            </SC.RepoRow>
-                        )
-                    })
-                }
-            </SC.UserInfoContainer>
+            </Card>
+            
+            <ReposCard
+                width={80}
+                height={50}
+                data={RepositoriesData}
+            />
             </>
             }
         </SC.Container>

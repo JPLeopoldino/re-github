@@ -89,6 +89,7 @@ export const RepoRow = styled.a`
     padding: 0px 12px;
     margin: 8px 0px;
     text-decoration: none;
+    width: 90%;
 
     &:hover{
         /* padding: 9px 35px; */
