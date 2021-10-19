@@ -6,7 +6,7 @@ import { ReposData } from '../../hooks/user'
 interface ICardProps {
     width?: number;
     height?: number;
-    data?: { reposData: ReposData[]; reposLanguagesData: Object; };
+    data?: { filteredRepos: ReposData[]; reposLanguagesData: Object; };
 }
 
 type IFormCardProps = FormHTMLAttributes<HTMLFormElement> & {
@@ -47,7 +47,7 @@ export const ReposCard: React.FC<ICardProps> = ({
         >
             {
                 // children
-                data?.reposData.map((item, index) => {
+                data?.filteredRepos.map((item, index) => {
                     return(
                         <SC.RepoRow
                             key={index}
@@ -55,10 +55,21 @@ export const ReposCard: React.FC<ICardProps> = ({
                             target="_blank"
                             background={getRandomIntInclusive()}
                         >
-                            <SC.UserName>{item.name}</SC.UserName>
-                            <SC.UserName>
-                                {data?.reposLanguagesData.toString}
-                            </SC.UserName>
+                            <SC.PathText>{item.owner.html_url.split("//").pop()}/</SC.PathText>
+                            <SC.BoldText>{item.name}</SC.BoldText>
+                            <SC.BottomRow>
+                                <SC.Row>
+                                    <SC.ForkIcon/>
+                                    <SC.Text>{item.forks_count}</SC.Text>
+                                    <SC.StarIcon/>
+                                    <SC.Text>{item.stargazers_count}</SC.Text>
+                                </SC.Row>
+                                <SC.LanguagesText
+                                    language={item.language}
+                                >
+                                    {item.language}
+                                </SC.LanguagesText>
+                            </SC.BottomRow>
                         </SC.RepoRow>
                     )
                 })
