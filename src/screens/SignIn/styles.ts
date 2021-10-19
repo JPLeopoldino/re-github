@@ -10,12 +10,14 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: #17102D; */
-    background: rgb(13,9,24);
-    background: linear-gradient(0deg, rgba(13,9,24,1) 0%, rgba(25,17,51,1) 100%);
+    background-color: rgb(13,9,24);
+    box-shadow: inset 0 0 8em rgba(0, 0, 0, 1);
+    /* background-color: #362B48; */
+    /* background: rgb(13,9,24);
+    background: linear-gradient(0deg, rgba(13,9,24,1) 0%, rgba(25,17,51,1) 100%); */
     /* background-color: #0d0f17; */
 
-    &::after{
+    /* &::after{
         content: '';
         position: absolute;
         top: -50px;
@@ -37,12 +39,12 @@ export const Container = styled.div`
         border-radius: 100%;
         background: rgb(18,11,129);
         background: linear-gradient(0deg, rgba(18,11,129,1) 0%, rgba(33,5,126,1) 49%, rgba(145,23,232,1) 100%);
-    }
+    } */
 `;
 
 export const Button = styled.button`
     padding: 10px 40px;
-    background-color: rgba(27, 23, 50, 0.5);
+    background-color: rgba(27, 23, 50, 0.35);
     outline: 1px solid #90a0d1;
     z-index: 99;
     border-radius: 24px;
@@ -84,9 +86,18 @@ export const Input = styled.input`
     border: none;
     text-align: center;
 
+    ::placeholder{
+        color: #90a0d1;
+        font-weight: normal;
+    }
+
     &:focus{
         box-shadow: inset 0 0 3em rgba(144, 160, 209, 0.2);
         background-color: rgba(27, 23, 50, 0.1);
+        outline: 2px solid #90a0d1;
+    }
+    &:focus::placeholder{
+        /* font-weight: bold; */
     }
 `;
 
@@ -143,4 +154,14 @@ export const UserAvatar = styled.img`
     height: auto;
     border-radius: 100%;
     border: 2px solid #90a0d1;
+`;
+
+export const SvgBG = styled.svg`
+    aspect-ratio: 960/540;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    filter: opacity(40%) blur(1px);
 `;
