@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import {
     FiArrowLeft,
+    FiLogOut,
+    FiSettings,
     FiUsers,
     FiStar,
     FiBriefcase,
@@ -361,16 +363,17 @@ export const UserLogin = styled.p`
     margin: 0;
 `;
 
-export const ArrowLeft = styled(FiArrowLeft)`
+export const SettingsLeft = styled(FiSettings)`
     position: absolute;
     top: 0;
     left: 0;
     padding: 14px;
     cursor: pointer;
     color: #FFF;
-    font-size: 28px;
+    font-size: 3rem;
     border-radius: 18px;
     transition: 0.4s ease;
+    z-index: 99999;
 
     &:hover{
         box-shadow: inset 0 0 3em rgba(144, 160, 209, 0.05);
