@@ -16,7 +16,7 @@ interface UserContextData {
     reposLanguagesData: Object;
 }
 
-interface UserData {
+export interface UserData {
     login: string,
     id: number,
     node_id: string,
