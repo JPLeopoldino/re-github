@@ -1,7 +1,6 @@
 import styled, {css} from 'styled-components';
 import {
     FiLogOut,
-    FiSettings,
     FiSun,
     FiMoon,
     FiX,
@@ -85,7 +84,6 @@ export const CloseButton = styled(FiX)`
 export const Title = styled.h3`
     position: absolute;
     top: 0.7rem;
-    
     font-size: 26px;
     color: ${props => props.theme.font};
     letter-spacing: 1.5px;

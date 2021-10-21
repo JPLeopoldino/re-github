@@ -2,14 +2,16 @@ import React from 'react';
 import * as SC from './styles';
 
 import { useTheme } from '../../hooks/theme';
-import { Card } from '../Cards';
 
 interface IModalProps {
     close(): void;
     redirect(): void;
 }
 
-export const Modal: React.FC<IModalProps> = ({ close, redirect }) => {
+export const Modal: React.FC<IModalProps> = ({
+    close,
+    redirect
+}) => {
 
     const { theme, toggleTheme, colorScheme } = useTheme();
 
@@ -49,5 +51,5 @@ export const Modal: React.FC<IModalProps> = ({ close, redirect }) => {
                 </SC.Button>
             </SC.CardContainer>
         </SC.Container>
-    )
+    );
 }

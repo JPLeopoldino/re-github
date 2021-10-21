@@ -78,7 +78,6 @@ const ThemeProvider: React.FC = ({ children }) => {
     
     const [currentTheme, setCurrentTheme] = useState<Theme>(() => {
         const storadedTheme = localStorage.getItem('theme');
-
         return (storadedTheme ?? 'dark') as Theme;
     });
     const [colorScheme, setColorScheme] = useState<IColorScheme>(colorSchemeValues.dark)
@@ -110,7 +109,7 @@ const ThemeProvider: React.FC = ({ children }) => {
         >
             {children}
         </ThemeContext.Provider>
-    )
+    );
 }
 
 const useTheme = (): ThemeContextData => {

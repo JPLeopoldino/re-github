@@ -11,8 +11,6 @@ export const Background: React.FC = () => {
         <SC.SvgBG
             id="visual"
             viewBox="0 0 960 540"
-            // width="960"
-            // height="540"
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
             version="1.1"
@@ -30,5 +28,5 @@ export const Background: React.FC = () => {
             <path d="M0 541L192 541L384 541L576 541L768 541L960 541L960 485L768 501L576 442L384 490L192 458L0 426Z" fill={colorScheme.background.shade6}>
             </path>
         </SC.SvgBG>       
-    )
+    );
 }

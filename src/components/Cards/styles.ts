@@ -1,8 +1,6 @@
 import styled, {css} from 'styled-components';
 import { BiGitRepoForked } from "react-icons/bi";
 import {
-    FiArrowLeft,
-    FiLogOut,
     FiSettings,
     FiUsers,
     FiStar,
@@ -12,13 +10,6 @@ import {
     FiGlobe,
     FiGithub,
     FiTwitter,
-    FiSun,
-    FiMoon,
-
-    FiBookOpen,
-    FiBook,
-    FiLayout,
-    FiBox,
 } from "react-icons/fi";
 import { FaQuoteLeft } from "react-icons/fa";
 
@@ -46,7 +37,6 @@ export const MainCardContainer = styled.div<CardDimensions>`
         css`
         height: ${props.height + 'rem'};
     `};
-    /* background: rgba(27, 23, 50, 0.75); */
     background: ${props => props.theme.card};
     box-shadow: 0 0 2em rgba(0, 0, 0, 0.3);
     display: flex;
@@ -81,7 +71,6 @@ export const MainReposCardContainer = styled.div<CardDimensions>`
         css`
         height: ${props.height + 'rem'};
     `};
-    /* background: rgba(27, 23, 50, 0.75); */
     background: ${props => props.theme.card};
     backdrop-filter: saturate(180%) blur(10px);
     box-shadow: 0 0 2em rgba(0, 0, 0, 0.3);
@@ -92,48 +81,24 @@ export const MainReposCardContainer = styled.div<CardDimensions>`
     border-radius: 10px;
     border: 1px solid ${props => props.theme.outline};
     z-index: 99;
-    /* backdrop-filter: blur(24px); */
     position: relative;
     overflow-x: hidden;
     overflow-y: scroll;
     padding: 1rem 2.5rem;
 
-    /* &::before{
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        box-shadow: inset 0 0 3em rgba(144, 160, 209, 0.08);
-        border-radius: 18px;
-    }
-
-    &::after{
-        content: '';
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 20%;
-        z-index: 9999;
-        background: linear-gradient(180deg, transparent 30%, rgba(144, 160, 209, 0.90) 150%);
-    } */
-
-    /* width */
     ::-webkit-scrollbar {
         width: 8px;
     }
 
-    /* Track */
     ::-webkit-scrollbar-track {
         background: rgba(0, 0, 0, 0.15);
     }
 
-    /* Handle */
     ::-webkit-scrollbar-thumb {
         background: ${props => props.theme.outline};
         border-radius: 24px;
     }
 
-    /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
         background: #FFF;
     }
@@ -150,9 +115,7 @@ export const MainFormCardContainer = styled.form<CardDimensions>`
         css`
         height: ${props.height + 'rem'};
     `};
-    /* background: rgba(27, 23, 50, 0.75); */
     background: ${props => props.theme.card};
-    /* box-shadow: 0 0 2em rgba(0, 0, 0, 0.3); */
     box-shadow: 0 0 2em rgba(144, 160, 209, 0.08);
     display: flex;
     flex-direction: column;
@@ -224,15 +187,6 @@ export const PathText = styled.p`
     color: ${props => props.theme.outline};
     font-size: 12px;
     font-style: italic;
-`;
-
-export const ForkIcon = styled(BiGitRepoForked)`
-    color: ${props => props.theme.font};
-    font-size: 16px;
-`;
-
-export const StarIcon = styled(FiStar)`
-    color: ${props => props.theme.font};
 `;
 
 export const LanguagesText = styled.p<Language>`
@@ -352,17 +306,6 @@ export const Text = styled.p`
 
 //============================================================
 
-export const LoadingContainer = styled.div`
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0,0,0,.25);
-    backdrop-filter: saturate(180%) blur(10px);
-    z-index: 99;
-`;
-
 export const Container = styled.div`
     width: 100vw;
     height: 100vh;
@@ -373,71 +316,10 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     gap: 30px;
-    /* background-color: #17102D; */
     background: rgb(13,9,24);
     background: linear-gradient(0deg, rgba(13,9,24,1) 0%, rgba(25,17,51,1) 100%);
     box-shadow: inset 0 0 8em rgba(0, 0, 0, 1);
     z-index: 0;
-    /* background-color: #0d0f17; */
-
-    /* &::after{
-        content: '';
-        position: absolute;
-        top: -50px;
-        left: -50px;
-        width: 800px;
-        height: 800px;
-        border-radius: 100%;
-        background: rgb(18,11,129);
-        background: linear-gradient(0deg, rgba(18,11,129,1) 0%, rgba(33,5,126,1) 49%, rgba(145,23,232,1) 100%);
-    }
-
-    &::before{
-        content: '';
-        position: absolute;
-        top: 50px;
-        right: -50px;
-        width: 1200px;
-        height: 1200px;
-        border-radius: 100%;
-        background: rgb(18,11,129);
-        background: linear-gradient(0deg, rgba(18,11,129,1) 0%, rgba(33,5,126,1) 49%, rgba(145,23,232,1) 100%);
-    } */
-`;
-
-export const Title = styled.h1`
-    color: #FFF;
-    font-size: 24px;
-    z-index: 99;
-`;
-
-export const UserInfoContainer = styled.div`
-    width: 25rem;
-    height: 80rem;
-    overflow: hidden;
-    overflow-y: scroll;
-    /* background:  #1B1732; */
-    background: rgba(27, 23, 50, 0.75);
-    box-shadow: 0 0 2em rgba(0, 0, 0, 0.3);
-    /* background: rgb(18,11,129);
-    background: linear-gradient(0deg, rgba(18,11,129,1) 0%, rgba(33,5,126,1) 49%, rgba(145,23,232,1) 100%); */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    border-radius: 18px;
-    border: 1px solid #90a0d1;
-    z-index: 99;
-    backdrop-filter: blur(24px);
-    position: relative;
-
-    &::before{
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        box-shadow: inset 0 0 3em rgba(144, 160, 209, 0.08);
-    }
 `;
 
 export const LinkContainer = styled.a`
@@ -463,33 +345,6 @@ export const Column = styled.div`
     margin: 0;
 `;
 
-export const FollowersRow = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: start;
-    align-self: start;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0.8rem;
-    border-radius: 8px;
-    background-color: rgba(144, 160, 209, 0.11);
-`;
-
-export const RowClean = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: start;
-    align-self: start;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin: 0;
-`;
-
 export const UserRow = styled.div`
     width: 100%;
     display: flex;
@@ -503,19 +358,6 @@ export const UserRow = styled.div`
     padding: 0.5rem 0.9rem;
     border-radius: 6px;
     background-color: ${props => props.theme.box};
-`;
-
-export const SimpleRow = styled.div`
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: start;
-    align-self: center;
-    gap: 24px;
-    margin: 0;
-    padding: 0.5rem 0.9rem;
-    border-radius: 6px;
 `;
 
 export const LinkRow = styled.a`
@@ -544,55 +386,6 @@ export const LinkRow = styled.a`
     }
 `;
 
-export const LinkTabRow = styled.a`
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    align-self: start;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0.5rem;
-    border-radius: 6px;
-    background-color: rgba(144, 160, 209, 0.11);
-    cursor: pointer;
-    z-index: 99;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-
-    &:hover{
-        background-color: rgba(144, 160, 209, 0.2);
-    }
-    &:active{
-        background-color: rgba(144, 160, 209, 0.5);
-    }
-`;
-
-export const LinkTabRowActive = styled.a`
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    align-self: start;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0.5rem;
-    border-radius: 6px;
-    background-color: rgba(144, 160, 209, 0.35);
-    cursor: pointer;
-    z-index: 99;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-
-    &:active{
-        background-color: rgba(144, 160, 209, 0.5);
-    }
-`;
-
 export const UserLinkRow = styled.a`
     display: flex;
     flex-direction: row;
@@ -612,11 +405,9 @@ export const UserLinkRow = styled.a`
 
     &:hover{
         background-color: ${props => props.theme.boxHover};
-        /* opacity: 80%; */
     }
     &:active{
         background-color: ${props => props.theme.boxActive};
-        /* opacity: 50%; */
     }
 `;
 
@@ -637,33 +428,11 @@ export const UserText = styled.p`
     color: ${props => props.theme.font};
 `;
 
-export const LinkText = styled.a`
-    color: #FFF;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 99;
-    text-decoration: none;
-    transition: color 0.15s ease;
-
-    &:hover{
-        color: #90a0d1;
-    }
-    &:active{
-        color: #FFF;
-    }
-`;
-
 export const UserName = styled.p`
     color: ${props => props.theme.font};
     font-size: 28px;
     font-weight: bold;
     text-transform: capitalize;
-    margin: 0;
-`;
-
-export const UserLogin = styled.p`
-    color: #FFF;
-    font-size: 18px;
     margin: 0;
 `;
 
@@ -686,6 +455,15 @@ export const Settings = styled(FiSettings)`
     &:active{
         box-shadow: inset 0 0 3em ${props => props.theme.boxActive};
     }
+`;
+
+export const ForkIcon = styled(BiGitRepoForked)`
+    color: ${props => props.theme.font};
+    font-size: 16px;
+`;
+
+export const StarIcon = styled(FiStar)`
+    color: ${props => props.theme.font};
 `;
 
 export const QuoteIcon = styled(FaQuoteLeft)`
@@ -719,63 +497,4 @@ export const GitIcon = styled(FiGithub)`
 
 export const TwitterIcon = styled(FiTwitter)`
     color: ${props => props.theme.font};
-`;
-
-export const OverviewIcon = styled(FiBookOpen)`
-    color: ${props => props.theme.font};
-`;
-
-export const RepositoriesIcon = styled(FiBook)`
-    color: ${props => props.theme.font};
-`;
-
-export const ProjectsIcon = styled(FiLayout)`
-    color: ${props => props.theme.font};
-`;
-
-export const PackagesIcon = styled(FiBox)`
-    color: ${props => props.theme.font};
-`;
-
-
-export const SvgBG = styled.svg`
-    aspect-ratio: 960/540;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    
-    position: absolute;
-    filter: opacity(60%) blur(1px);
-`;
-
-export const Input = styled.input`
-    width: 95%;
-    padding: 15px 30px;
-    background-color: rgba(27, 23, 50, 0.3);
-    outline: 1px solid #90a0d1;
-    z-index: 99;
-    border-radius: 24px;
-    color: #FFFFFF;
-    font-weight: bold;
-    font-size: 16px;
-    transition: 0.2s ease;
-    box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.2);
-    border: none;
-    text-align: center;
-    margin-top: 10px;
-
-    ::placeholder{
-        color: #90a0d1;
-        font-weight: normal;
-    }
-
-    &:focus{
-        box-shadow: inset 0 0 3em rgba(144, 160, 209, 0.2);
-        background-color: rgba(27, 23, 50, 0.1);
-        outline: 2px solid #90a0d1;
-    }
-    &:focus::placeholder{
-        /* font-weight: bold; */
-    }
 `;

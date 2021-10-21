@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { BsGithub } from "react-icons/bs";
 
 export const Container = styled.div`
     width: 100vw;

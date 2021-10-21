@@ -34,7 +34,4 @@ export const Input = styled.input<InputDimensions>`
         background-color: rgba(27, 23, 50, 0.1);
         outline: 2px solid ${props => props.theme.outline};
     }
-    &:focus::placeholder{
-        /* font-weight: bold; */
-    }
 `;

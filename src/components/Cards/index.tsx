@@ -1,8 +1,9 @@
 import React, { FormHTMLAttributes } from 'react';
-
 import * as SC from './styles';
+
 import { ReposData, UserData } from '../../hooks/user'
 import { useTheme } from "../../hooks/theme"
+
 interface ICardProps {
     width?: number;
     height?: number;
@@ -18,12 +19,6 @@ interface IUserCardProps {
 type IFormCardProps = FormHTMLAttributes<HTMLFormElement> & {
     width?: number;
     height?: number;
-}
-
-const getRandomIntInclusive = () => {
-    const min = Math.ceil(1);
-    const max = Math.floor(8);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 export const Card: React.FC<ICardProps> = ({
@@ -42,10 +37,13 @@ export const Card: React.FC<ICardProps> = ({
         >
             {children}
         </SC.MainCardContainer>
-    )
+    );
 }
 
-export const UserCard: React.FC<IUserCardProps> = ({ data, redirect, openModal }) => {
+export const UserCard: React.FC<IUserCardProps> = ({
+    data,
+    openModal
+}) => {
     
     const { colorScheme } = useTheme();
     
@@ -143,9 +141,9 @@ export const UserCard: React.FC<IUserCardProps> = ({ data, redirect, openModal }
                     </SC.LinkRow>
                     : null
             }
-            <SC.UserText theme={colorScheme}>{`Member since: ${data.created_at.substr(0, 4)}`}</SC.UserText>
+            {/* <SC.UserText theme={colorScheme}>{`Member since: ${data.created_at.substr(0, 4)}`}</SC.UserText> */}
         </Card>
-    )
+    );
 }
 
 export const ReposCard: React.FC<ICardProps> = ({
@@ -163,14 +161,12 @@ export const ReposCard: React.FC<ICardProps> = ({
             theme={colorScheme}
         >
             {
-                // children
                 data?.filteredRepos.map((item, index) => {
                     return(
                         <SC.RepoRow
                             key={index}
                             href={item.html_url}
                             target="_blank"
-                            background={getRandomIntInclusive()}
                             theme={colorScheme}
                         >
                             <SC.PathText theme={colorScheme}>
@@ -203,7 +199,7 @@ export const ReposCard: React.FC<ICardProps> = ({
                 })
             }
         </SC.MainReposCardContainer>
-    )
+    );
 }
 
 export const FormCard: React.FC<IFormCardProps> = 
@@ -225,5 +221,5 @@ export const FormCard: React.FC<IFormCardProps> =
         >
             {children}
         </SC.MainFormCardContainer>
-    )
+    );
 }

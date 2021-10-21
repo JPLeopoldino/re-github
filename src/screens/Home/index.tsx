@@ -1,26 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import Lottie from 'react-lottie';
-
 import * as SC from './styles';
 
 import animationData from '../../assets/loading.json';
 import { useUser, ReposData } from '../../hooks/user';
+import { useTheme } from '../../hooks/theme';
 
 import { Card, ReposCard, UserCard } from '../../components/Cards';
 import { Input } from '../../components/Input';
 import { Modal } from '../../components/Modal';
 import { Background } from '../../components/Background';
-import { useTheme } from '../../hooks/theme';
 
 const Home: React.FC = () => {
 
     const { colorScheme } = useTheme();
     const { getAllUserInfo, userData, reposData, userLogon, loading, reposLanguagesData } = useUser();
+
     const [redirect, setRedirect] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [filteredRepos, setFilteredRepos] = useState<ReposData[]>(reposData);
+
     const RepositoriesData = { filteredRepos, reposLanguagesData }
+    
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+          preserveAspectRatio: "xMidYMid slice",
+        },
+    }
 
     const handleShowModal = () => {
         setShowModal(!showModal)
@@ -38,15 +48,6 @@ const Home: React.FC = () => {
             return item.name.search(value) !== -1;
         });
         setFilteredRepos(result);
-    }
-
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: animationData,
-        rendererSettings: {
-          preserveAspectRatio: "xMidYMid slice",
-        },
     }
 
     useEffect(() => {
