@@ -254,17 +254,17 @@ export const LinkTabRow = styled.a`
     margin: 0;
     padding: 0.5rem;
     border-radius: 6px;
-    background-color: rgba(144, 160, 209, 0.11);
+    background-color: ${props => props.theme.box};
     cursor: pointer;
     z-index: 99;
     text-decoration: none;
     transition: background-color 0.2s ease;
 
     &:hover{
-        background-color: rgba(144, 160, 209, 0.2);
+        background-color: ${props => props.theme.boxHover};
     }
     &:active{
-        background-color: rgba(144, 160, 209, 0.5);
+        background-color: ${props => props.theme.boxActive};
     }
 `;
 
@@ -280,14 +280,14 @@ export const LinkTabRowActive = styled.a`
     margin: 0;
     padding: 0.5rem;
     border-radius: 6px;
-    background-color: rgba(144, 160, 209, 0.35);
+    background-color: ${props => props.theme.boxActive};
     cursor: pointer;
     z-index: 99;
     text-decoration: none;
-    transition: background-color 0.2s ease;
+    transition: opacity 0.2s ease;
 
     &:active{
-        background-color: rgba(144, 160, 209, 0.5);
+        opacity: 70%;
     }
 `;
 
@@ -326,7 +326,7 @@ export const Divider = styled.span`
 
 
 export const BoldText = styled.b`
-    color: #FFF;
+    color: ${props => props.theme.font};
 `;
 
 export const Text = styled.p`
@@ -422,19 +422,19 @@ export const TwitterIcon = styled(FiTwitter)`
 `;
 
 export const OverviewIcon = styled(FiBookOpen)`
-    color: #FFF;
+    color: ${props => props.theme.font};
 `;
 
 export const RepositoriesIcon = styled(FiBook)`
-    color: #FFF;
+    color: ${props => props.theme.font};
 `;
 
 export const ProjectsIcon = styled(FiLayout)`
-    color: #FFF;
+    color: ${props => props.theme.font};
 `;
 
 export const PackagesIcon = styled(FiBox)`
-    color: #FFF;
+    color: ${props => props.theme.font};
 `;
 
 

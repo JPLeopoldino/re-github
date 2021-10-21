@@ -7,16 +7,12 @@ import {
     FiX,
 } from "react-icons/fi";
 
-interface ITheme {
-    theme: string;
-}
-
 interface CardDimensions {
     width?: number;
     height?: number;
 }
 
-export const Container = styled.div<ITheme>`
+export const Container = styled.div`
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -41,15 +37,14 @@ export const CardContainer = styled.div<CardDimensions>`
         css`
         height: ${props.height + 'rem'};
     `};
-    /* background: rgba(27, 23, 50, 0.75); */
-    background: linear-gradient(90deg,rgba(255,0,142,.08),rgba(130,87,229,.08));
+    background: ${props => props.theme.card};
     box-shadow: 0 0 2em rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     border-radius: 10px;
-    border: 1px solid #90a0d1;
+    border: 1px solid ${props => props.theme.outline};
     z-index: 9999;
     backdrop-filter: saturate(180%) blur(10px);
     position: relative;
@@ -71,7 +66,7 @@ export const CloseButton = styled(FiX)`
     left: 0;
     padding: 14px;
     cursor: pointer;
-    color: #FFF;
+    color: ${props => props.theme.font};
     font-size: 3rem;
     border-radius: 10px;
     transition: 0.4s ease;
@@ -79,11 +74,11 @@ export const CloseButton = styled(FiX)`
     box-shadow: inset 0 0 3em rgba(144, 160, 209, 0.1);
 
     &:hover{
-        box-shadow: inset 0 0 3em rgba(144, 160, 209, 0.2);
+        box-shadow: inset 0 0 3em ${props => props.theme.boxHover};
     }
 
     &:active{
-        box-shadow: inset 0 0 3em rgba(144, 160, 209, 0.5);
+        box-shadow: inset 0 0 3em ${props => props.theme.boxActive};
     }
 `;
 
@@ -92,7 +87,7 @@ export const Title = styled.h3`
     top: 0.7rem;
     
     font-size: 26px;
-    color: #FFF;
+    color: ${props => props.theme.font};
     letter-spacing: 1.5px;
 `;
 
@@ -106,7 +101,7 @@ export const Button = styled.button`
     margin: 0;
     padding: 0.8rem 1rem;
     border-radius: 6px;
-    background-color: rgba(144, 160, 209, 0.11);
+    background-color: ${props => props.theme.box};
     cursor: pointer;
     z-index: 99;
     text-decoration: none;
@@ -115,30 +110,30 @@ export const Button = styled.button`
     border: none;
 
     &:hover{
-        background-color: rgba(144, 160, 209, 0.2);
+        background-color: ${props => props.theme.boxHover};
     }
     &:active{
-        background-color: rgba(144, 160, 209, 0.5);
+        background-color: ${props => props.theme.boxActive};
     }
 `;
 
 export const BoldText = styled.b`
     font-size: 16px;
-    color: #FFF;
+    color: ${props => props.theme.font};
     letter-spacing: .5px;
 `;
 
 export const LightIcon = styled(FiSun)`
     font-size: 24px;
-    color: #FFF;
+    color: ${props => props.theme.font};
 `;
 
 export const DarkIcon = styled(FiMoon)`
     font-size: 24px;
-    color: #FFF;
+    color: ${props => props.theme.font};
 `;
 
 export const LogoutIcon = styled(FiLogOut)`
 font-size: 24px;
-color: #FFF;
+color: ${props => props.theme.font};
 `;

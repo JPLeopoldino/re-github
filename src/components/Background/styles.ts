@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SvgBG = styled.svg`
     aspect-ratio: 960/540;
-    width: 100vw;
+    /* width: 100vw; */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

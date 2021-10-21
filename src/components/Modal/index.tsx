@@ -11,31 +11,41 @@ interface IModalProps {
 
 export const Modal: React.FC<IModalProps> = ({ close, redirect }) => {
 
-    const { theme, toggleTheme } = useTheme();
+    const { theme, toggleTheme, colorScheme } = useTheme();
 
     return(
-        <SC.Container
-            theme={theme}
-        >
+        <SC.Container>
             <SC.CardContainer
                 height={20}
                 width={18}
+                theme={colorScheme}
             >
-                <SC.CloseButton onClick={close}>
+                <SC.CloseButton
+                    onClick={close}
+                    theme={colorScheme}
+                >
                     Close Modal
                 </SC.CloseButton>
-                <SC.Title>Settings</SC.Title>
-                <SC.Button onClick={toggleTheme}>
+                <SC.Title theme={colorScheme}>
+                    Settings
+                </SC.Title>
+                <SC.Button
+                    onClick={toggleTheme}
+                    theme={colorScheme}
+                >
                     {
                         theme === 'dark'
-                        ? <SC.DarkIcon/>
-                        : <SC.LightIcon/>
+                        ? <SC.DarkIcon theme={colorScheme}/>
+                        : <SC.LightIcon theme={colorScheme}/>
                     }
-                    <SC.BoldText>Change Theme</SC.BoldText>
+                    <SC.BoldText theme={colorScheme}>Change Theme</SC.BoldText>
                 </SC.Button>
-                <SC.Button onClick={redirect}>
-                    <SC.LogoutIcon/>
-                    <SC.BoldText>Logout</SC.BoldText>
+                <SC.Button
+                    onClick={redirect}
+                    theme={colorScheme}
+                >
+                    <SC.LogoutIcon theme={colorScheme}/>
+                    <SC.BoldText theme={colorScheme}>Logout</SC.BoldText>
                 </SC.Button>
             </SC.CardContainer>
         </SC.Container>

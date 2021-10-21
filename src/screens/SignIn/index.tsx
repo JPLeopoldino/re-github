@@ -6,9 +6,11 @@ import { useUser } from '../../hooks/user';
 import { FormCard } from '../../components/Cards';
 import { Input } from '../../components/Input';
 import { Background } from '../../components/Background';
+import { useTheme } from '../../hooks/theme';
 
 const SingIn: React.FC = () => {
 
+    const { colorScheme } = useTheme();
     const { handleUserLogonChange } = useUser();
     const [redirect, setRedirect] = useState(false);
 
@@ -22,19 +24,28 @@ const SingIn: React.FC = () => {
             redirect
                 ? <Redirect to="/home" />
                 : <SC.Container>
-                    <SC.Title>Re-GitHub</SC.Title>
+                    <SC.Title theme={colorScheme}>
+                        Re-GitHub
+                    </SC.Title>
                     <FormCard
                         onSubmit={handleSingIn}
                         width={20}
                         height={28}
                     >
-                        <SC.Title>SingIn</SC.Title>
+                        <SC.Title theme={colorScheme}>
+                            SingIn
+                        </SC.Title>
                         <Input
                             type="text"
                             placeholder="GitHub username"
                             onChange={event => handleUserLogonChange(event.target.value)}
                         />
-                        <SC.Button type="submit">Login</SC.Button>
+                        <SC.Button
+                            type="submit"
+                            theme={colorScheme}
+                        >
+                            Login
+                        </SC.Button>
                     </FormCard>
                     <Background/>
                 </SC.Container>

@@ -11,8 +11,8 @@ export const Input = styled.input<InputDimensions>`
         width: ${props.width + '%'};
     `};
     padding: 10px 30px;
-    background-color: rgba(27, 23, 50, 0.3);
-    outline: 1px solid #90a0d1;
+    background-color: ${props => props.theme.boxBackground};
+    outline: 1px solid ${props => props.theme.outline};
     z-index: 99;
     border-radius: 24px;
     color: #FFFFFF;
@@ -25,14 +25,14 @@ export const Input = styled.input<InputDimensions>`
     margin-top: 10px;
 
     ::placeholder{
-        color: #90a0d1;
+        color: ${props => props.theme.outline};
         font-weight: normal;
     }
 
     &:focus{
-        box-shadow: inset 0 0 3em rgba(144, 160, 209, 0.2);
+        box-shadow: inset 0 0 3em ${props => props.theme.box};
         background-color: rgba(27, 23, 50, 0.1);
-        outline: 2px solid #90a0d1;
+        outline: 2px solid ${props => props.theme.outline};
     }
     &:focus::placeholder{
         /* font-weight: bold; */

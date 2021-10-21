@@ -47,14 +47,14 @@ export const MainCardContainer = styled.div<CardDimensions>`
         height: ${props.height + 'rem'};
     `};
     /* background: rgba(27, 23, 50, 0.75); */
-    background: linear-gradient(90deg,rgba(255,0,142,.08),rgba(130,87,229,.08));
+    background: ${props => props.theme.card};
     box-shadow: 0 0 2em rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     border-radius: 10px;
-    border: 1px solid #90a0d1;
+    border: 1px solid ${props => props.theme.outline};
     z-index: 99;
     backdrop-filter: saturate(180%) blur(10px);
     position: relative;
@@ -82,7 +82,7 @@ export const MainReposCardContainer = styled.div<CardDimensions>`
         height: ${props.height + 'rem'};
     `};
     /* background: rgba(27, 23, 50, 0.75); */
-    background: linear-gradient(90deg,rgba(255,0,142,.08),rgba(130,87,229,.08));
+    background: ${props => props.theme.card};
     backdrop-filter: saturate(180%) blur(10px);
     box-shadow: 0 0 2em rgba(0, 0, 0, 0.3);
     display: flex;
@@ -90,7 +90,7 @@ export const MainReposCardContainer = styled.div<CardDimensions>`
     align-items: center;
     justify-content: start;
     border-radius: 10px;
-    border: 1px solid #90a0d1;
+    border: 1px solid ${props => props.theme.outline};
     z-index: 99;
     /* backdrop-filter: blur(24px); */
     position: relative;
@@ -129,7 +129,7 @@ export const MainReposCardContainer = styled.div<CardDimensions>`
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        background: #90a0d1;        
+        background: ${props => props.theme.outline};
         border-radius: 24px;
     }
 
@@ -151,7 +151,7 @@ export const MainFormCardContainer = styled.form<CardDimensions>`
         height: ${props.height + 'rem'};
     `};
     /* background: rgba(27, 23, 50, 0.75); */
-    background: linear-gradient(90deg,rgba(255,0,142,.08),rgba(130,87,229,.08));
+    background: ${props => props.theme.card};
     /* box-shadow: 0 0 2em rgba(0, 0, 0, 0.3); */
     box-shadow: 0 0 2em rgba(144, 160, 209, 0.08);
     display: flex;
@@ -159,7 +159,7 @@ export const MainFormCardContainer = styled.form<CardDimensions>`
     align-items: center;
     justify-content: space-evenly;
     border-radius: 10px;
-    border: 1px solid #90a0d1;
+    border: 1px solid ${props => props.theme.outline};
     z-index: 99;
     backdrop-filter: saturate(180%) blur(5px);
     position: relative;
@@ -179,7 +179,7 @@ export const RepoRow = styled.a<CardStyles>`
     width: 100%;
     z-index: 99;
     box-shadow: 0 0 2em rgba(0, 0, 0, 0.3);
-    border: 1px solid #90a0d1;
+    border: 1px solid ${props => props.theme.outline};
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -190,17 +190,17 @@ export const RepoRow = styled.a<CardStyles>`
     text-decoration: none;
     transition: 0.2s ease;
     transition-property: box-shadow, outline;
-    background: rgba(27, 23, 50, 0.3);
+    background: ${props => props.theme.boxBackground};
     padding: 0.8rem 1rem;
 
     &:hover{
-        box-shadow: inset 0 0 4em rgba(144, 160, 209, 0.2);
-        outline: 1.5px solid #90a0d1;
+        box-shadow: inset 0 0 4em ${props => props.theme.boxHover};
+        outline: 1.5px solid ${props => props.theme.outline};
         background-color: rgba(27, 23, 50, 0.1);
     }
 
     &:active{
-        box-shadow: inset 0 0 3em rgba(144, 160, 209, 0.5);
+        box-shadow: inset 0 0 3em ${props => props.theme.boxActive};
     }
 `;
 
@@ -221,18 +221,18 @@ export const Row = styled.div`
 `;
 
 export const PathText = styled.p`
-    color: #90a0d1;
+    color: ${props => props.theme.outline};
     font-size: 12px;
     font-style: italic;
 `;
 
 export const ForkIcon = styled(BiGitRepoForked)`
-    color: #FFF;
+    color: ${props => props.theme.font};
     font-size: 16px;
 `;
 
 export const StarIcon = styled(FiStar)`
-    color: #FFF;
+    color: ${props => props.theme.font};
 `;
 
 export const LanguagesText = styled.p<Language>`
@@ -339,13 +339,13 @@ export const LanguagesText = styled.p<Language>`
 `;
 
 export const BoldText = styled.p`
-    color: #FFF;
+    color: ${props => props.theme.font};
     font-size: 24px;
     font-weight: bold;
 `;
 
 export const Text = styled.p`
-    color: #FFF;
+    color: ${props => props.theme.font};
     font-size: 12px;
     font-weight: bold;
 `;
@@ -451,7 +451,7 @@ export const UserAvatar = styled.img`
     width: 100%;
     height: auto;
     border-radius: 100%;
-    border: 2px solid #90a0d1;
+    border: 2px solid ${props => props.theme.outline};
 `;
 
 export const Column = styled.div`
@@ -502,7 +502,7 @@ export const UserRow = styled.div`
     margin: 0;
     padding: 0.5rem 0.9rem;
     border-radius: 6px;
-    background-color: rgba(144, 160, 209, 0.11);
+    background-color: ${props => props.theme.box};
 `;
 
 export const SimpleRow = styled.div`
@@ -530,17 +530,17 @@ export const LinkRow = styled.a`
     margin: 0;
     padding: 0.5rem 0.9rem;
     border-radius: 6px;
-    background-color: rgba(144, 160, 209, 0.11);
+    background-color: ${props => props.theme.box};
     cursor: pointer;
     z-index: 99;
     text-decoration: none;
     transition: background-color 0.2s ease;
 
     &:hover{
-        background-color: rgba(144, 160, 209, 0.2);
+        background-color: ${props => props.theme.boxHover};
     }
     &:active{
-        background-color: rgba(144, 160, 209, 0.5);
+        background-color: ${props => props.theme.boxActive};
     }
 `;
 
@@ -604,17 +604,19 @@ export const UserLinkRow = styled.a`
     margin: 0;
     padding: 0.4rem 0.8rem;
     border-radius: 6px;
-    background-color: rgba(144, 160, 209, 0.11);
+    background-color: ${props => props.theme.box};
     cursor: pointer;
     z-index: 99;
     text-decoration: none;
     transition: background-color 0.2s ease;
 
     &:hover{
-        background-color: rgba(144, 160, 209, 0.2);
+        background-color: ${props => props.theme.boxHover};
+        /* opacity: 80%; */
     }
     &:active{
-        background-color: rgba(144, 160, 209, 0.5);
+        background-color: ${props => props.theme.boxActive};
+        /* opacity: 50%; */
     }
 `;
 
@@ -622,7 +624,7 @@ export const Divider = styled.span`
     width: 100%;
     height: 1px;
     border-radius: 100%;
-    background-color: #90a0d1;
+    background-color: ${props => props.theme.outline};
     margin: 0;
 `;
 
@@ -671,18 +673,18 @@ export const Settings = styled(FiSettings)`
     left: 0;
     padding: 14px;
     cursor: pointer;
-    color: #FFF;
+    color: ${props => props.theme.font};
     font-size: 3rem;
-    border-radius: 18px;
+    border-radius: 10px;
     transition: 0.4s ease;
     z-index: 99999;
 
     &:hover{
-        box-shadow: inset 0 0 3em rgba(144, 160, 209, 0.05);
+        box-shadow: inset 0 0 3em ${props => props.theme.box};
     }
 
     &:active{
-        box-shadow: inset 0 0 3em rgba(144, 160, 209, 0.5);
+        box-shadow: inset 0 0 3em ${props => props.theme.boxActive};
     }
 `;
 

@@ -17,6 +17,12 @@ interface ThemeContextData {
 interface IColorScheme {
     font: string;
     acent: string;
+    box: string;
+    boxHover: string;
+    boxActive: string;
+    boxBackground: string;
+    card: string;
+    outline: string,
     background: {
         shade1: string;
         shade2: string;
@@ -29,20 +35,32 @@ interface IColorScheme {
 
 export const colorSchemeValues = {
     light: {
-        font: '#000',
+        font: '#ffffff',
         acent: '#FFF',
+        box: 'rgba(190, 201, 235, 0.20)',
+        boxHover: 'rgba(190, 201, 235, 0.30)',
+        boxActive: 'rgba(190, 201, 235, 0.50)',
+        boxBackground: 'rgba(56, 47, 95, 0.24)',
+        card: 'linear-gradient(90deg, #fdd7fd32, #8b6cc01f)',
+        outline: '#c4bee4',
         background: {
-            shade1: '#9b91c4',
-            shade2: '#a8a0cc',
-            shade3: '#bdb4e0',
-            shade4: '#c9c2e2',
-            shade5: '#dedae9',
+            shade1: '#9786dd',
+            shade2: '#a093da',
+            shade3: '#b8ade4',
+            shade4: '#cbc2eb',
+            shade5: '#e5e1f1',
             shade6: '#ffffff',
         }
     },
     dark: {
         font: '#FFF',
         acent: '#FFF',
+        box: 'rgba(144, 160, 209, 0.11)',
+        boxHover: 'rgba(144, 160, 209, 0.2)',
+        boxActive: 'rgba(144, 160, 209, 0.5)',
+        boxBackground: 'rgba(27, 23, 50, 0.3)',
+        card: 'linear-gradient(90deg,rgba(255,0,142,.08),rgba(130,87,229,.08))',
+        outline: '#90a0d1',
         background: {
             shade1: '#230aad',
             shade2: '#3115b6',

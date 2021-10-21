@@ -11,9 +11,11 @@ import { Card, ReposCard, UserCard } from '../../components/Cards';
 import { Input } from '../../components/Input';
 import { Modal } from '../../components/Modal';
 import { Background } from '../../components/Background';
+import { useTheme } from '../../hooks/theme';
 
 const Home: React.FC = () => {
 
+    const { colorScheme } = useTheme();
     const { getAllUserInfo, userData, reposData, userLogon, loading, reposLanguagesData } = useUser();
     const [redirect, setRedirect] = useState(false);
     const [showModal, setShowModal] = useState(false);
@@ -104,30 +106,34 @@ const Home: React.FC = () => {
                     <SC.SimpleRow>
                         <SC.LinkTabRowActive
                             href="#/home"
+                            theme={colorScheme}
                         >
-                            <SC.OverviewIcon/>
-                            <SC.BoldText>Overview</SC.BoldText>
+                            <SC.OverviewIcon theme={colorScheme}/>
+                            <SC.BoldText theme={colorScheme}>Overview</SC.BoldText>
                         </SC.LinkTabRowActive>
                         <SC.LinkTabRow
                             href={`https://github.com/${userLogon}?tab=repositories`}
                             target="_blank"
+                            theme={colorScheme}
                         >
-                            <SC.RepositoriesIcon/>
-                            <SC.BoldText>Repositories</SC.BoldText>
+                            <SC.RepositoriesIcon theme={colorScheme}/>
+                            <SC.BoldText theme={colorScheme}>Repositories</SC.BoldText>
                         </SC.LinkTabRow>
                         <SC.LinkTabRow
                             href={`https://github.com/${userLogon}?tab=projects`}
                             target="_blank"
+                            theme={colorScheme}
                         >
-                            <SC.ProjectsIcon/>
-                            <SC.BoldText>Projects</SC.BoldText>
+                            <SC.ProjectsIcon theme={colorScheme}/>
+                            <SC.BoldText theme={colorScheme}>Projects</SC.BoldText>
                         </SC.LinkTabRow>
                         <SC.LinkTabRow
                             href={`https://github.com/${userLogon}?tab=packages`}
                             target="_blank"
+                            theme={colorScheme}
                         >
-                            <SC.PackagesIcon/>
-                            <SC.BoldText>Packages</SC.BoldText>
+                            <SC.PackagesIcon theme={colorScheme}/>
+                            <SC.BoldText theme={colorScheme}>Packages</SC.BoldText>
                         </SC.LinkTabRow>
                     </SC.SimpleRow>
                     <Input
