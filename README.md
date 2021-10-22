@@ -20,8 +20,14 @@
 </div>
 
 ## :speech_balloon: **About**
-Font It is a text editor with Rich-Text formatting and uses valid HTML markup.
-One of the challenges of this project was user accessibility. How the user could access the text formatting tools using only the keyboard. For that I used ReactJS with the SlateJS library.
+**Re-GitHub** is a retelling of the original GitHub design.
+The application consumes the official [GitHub api](https://docs.github.com/en/rest) and returns a screen with a layout similar to the official website but with different design elements.
+
+I made this application to train my skills in:
+> *REST api consumption using **Axios**;*
+> *Screen layout and design using **Styled-Components**;*
+> *Changing themes using hooks;*
+> *Filtering and searching data stored in context;*
 
 ---
 ## :rocket: **How to run**
@@ -48,9 +54,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The following tools were used in the construction of the project
 
 - [React](https://pt-br.reactjs.org/)
-- [React Lottie](https://github.com/chenqingspring/react-lottie#readme)
-- [React Icons](https://react-icons.github.io/react-icons)
-- [React Router Dom](https://reactrouter.com/)
+    - [React Lottie](https://github.com/chenqingspring/react-lottie#readme)
+    - [React Icons](https://react-icons.github.io/react-icons)
+    - [React Router Dom](https://reactrouter.com/)
 - [Styled Components](https://styled-components.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 
