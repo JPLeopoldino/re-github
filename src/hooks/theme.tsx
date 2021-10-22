@@ -78,12 +78,12 @@ const ThemeProvider: React.FC = ({ children }) => {
     
     const [currentTheme, setCurrentTheme] = useState<Theme>(() => {
         const storadedTheme = localStorage.getItem('theme');
-        return (storadedTheme ?? 'dark') as Theme;
+        return (storadedTheme ?? 'light') as Theme;
     });
     const [colorScheme, setColorScheme] = useState<IColorScheme>(colorSchemeValues.dark)
 
     const toggleTheme = () => {
-        setCurrentTheme(currentTheme === 'dark' ? 'light' : 'dark')
+        setCurrentTheme(currentTheme === 'light' ? 'dark' : 'light')
     }
 
     const handleColorScheme = useCallback(() => {
